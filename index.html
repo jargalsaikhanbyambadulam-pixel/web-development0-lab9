@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб 6 - Зургийн цомог портал</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Хуудас хооронд шилжих товчны загвар */
+    .nav-buttons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .nav-btn {
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+    .nav-btn.active {
+      background-color: #3b82f6;
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+    .nav-btn:hover {
+      opacity: 0.85;
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <h1>
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
+        </svg>
+        Зургийн Цомог Портал
+      </h1>
+      
+      <div class="header-right">
+        <!-- Хуудас хооронд шилжих товчнууд -->
+        <nav class="nav-buttons">
+          <a href="index.html" class="nav-btn active">Лаб 6/7</a>
+          <a href="bootstrap.html" class="nav-btn">Bootstrap</a>
+          <a href="tailwind.html" class="nav-btn">Tailwind</a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-theme" aria-label="Dark mode шилжүүлэх">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span id="theme-text">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="intro">
+      <h2>Бямбадулам - Лаборатори 6</h2>
+      <p>CSS3 Animation, 3D Transform, Dark Mode ба Мультимедиа туршилт</p>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="gallery-section">
+      <h3 class="section-title">3D Flip Card Зургийн Цомог</h3>
+      
+      <div class="gallery-grid">
+        
+        <!-- Card 1 -->
+        <div class="card-3d" style="--i: 1;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo1.jpg" alt="Зураг 1" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=1'">
+              <div class="card-front-title">Цомог #1</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 1 Тайлбар</h4>
+              <p>Энэ бол 3D flip card-ын ард талын тайлбар хэсэг юм.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-3d" style="--i: 2;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo2.jpg" alt="Зураг 2" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=2'">
+              <div class="card-front-title">Цомог #2</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 2 Тайлбар</h4>
+              <p>3D transform ба perspective хэрэглэсэн эффект.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-3d" style="--i: 3;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo3.jpg" alt="Зураг 3" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=3'">
+              <div class="card-front-title">Цомог #3</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 3 Тайлбар</h4>
+              <p>Custom property --i ашиглан stagger хугацаа тохируулсан.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-3d" style="--i: 4;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo4.jpg" alt="Зураг 4" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=4'">
+              <div class="card-front-title">Цомог #4</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 4 Тайлбар</h4>
+              <p>Hover болон Focus хийхэд эргэх хөдөлгөөн үзүүлнэ.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card-3d" style="--i: 5;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo5.jpg" alt="Зураг 5" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=5'">
+              <div class="card-front-title">Цомог #5</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 5 Тайлбар</h4>
+              <p>CSS Grid болон Flexbox хосолсон responsive шийдэл.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card-3d" style="--i: 6;">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/photo6.jpg" alt="Зураг 6" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=6'">
+              <div class="card-front-title">Цомог #6</div>
+            </div>
+            <div class="card-back">
+              <h4>Зураг 6 Тайлбар</h4>
+              <p>Лаборатори 6-ын иж бүрэн практик даалгавар.</p>
+              <button class="btn-flip">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section class="media-section">
+      <h3 class="section-title">Мультимедиа Агуулга</h3>
+      
+      <div class="media-grid">
+        <div class="media-card">
+          <h4>🎥 HTML5 Видео ба Subtitle Track</h4>
+          <video controls preload="metadata" poster="img/photo1.jpg">
+            <source src="video/clip.mp4" type="video/mp4">
+            <source src="video/clip.webm" type="video/webm">
+            <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
+            Таны хөтөч видео тоглуулахыг дэмжихгүй байна.
+          </video>
+        </div>
+
+        <div class="media-card">
+          <h4>🌐 Хүртээмжтэй Iframe (YouTube / Map)</h4>
+          <div class="iframe-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+              title="Мультимедиа жишээ видео" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Бямбадулам | Мэдээллийн технологи 2-р курс | Лаб 6</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Lab 9: Feedback Form Section -->
+    <section class="form-section" style="margin-top: 3rem; padding: 2rem; background: var(--card-bg, #1e2230); border-radius: 8px;">
+      <h3 class="section-title">Порталын Санал Хүсэлтийн Форм</h3>
+      <form id="feedbackForm" novalidate>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="nameInput">Нэр:</label><br>
+          <input type="text" id="nameInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
+          <small id="nameError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="emailInput">Имэйл хаяг:</label><br>
+          <input type="text" id="emailInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
+          <small id="emailError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="passwordInput">Нууц үг:</label><br>
+          <input type="password" id="passwordInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
+          <small id="passwordError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="messageInput">Санал хүсэлт:</label><br>
+          <textarea id="messageInput" rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;"></textarea>
+          <small id="messageError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+        </div>
+
+        <button type="submit" style="padding: 0.7rem 1.5rem; cursor: pointer;">Илгээх</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Бямбадулам | Мэдээллийн технологи 2-р курс | Лаб 9</p>
+  </footer>
+
+  <!-- JS Файлуудыг зөв дарааллаар холбох -->
+  <script src="js/algorithms.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
