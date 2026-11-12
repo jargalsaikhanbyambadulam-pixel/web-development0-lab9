@@ -43,6 +43,20 @@
       align-items: center;
       gap: 10px;
     }
+    /* Лаб 9: форм */
+    .form-section label { font-weight: 600; }
+    .form-section input, .form-section textarea {
+      width: 100%; padding: .6rem .8rem; margin-top: .3rem; font: inherit;
+      color: var(--text-primary); background: var(--bg-primary);
+      border: 2px solid var(--border-color); border-radius: 8px;
+    }
+    .form-section input:focus, .form-section textarea:focus { outline: 2px solid var(--accent-color); }
+    .form-section small { display: block; min-height: 1.2em; margin-top: .2rem; color: #ef4444; }
+    .form-section button[type="submit"] {
+      padding: .7rem 1.6rem; border: 0; border-radius: 8px; cursor: pointer;
+      background: var(--accent-color); color: #fff; font-weight: 600;
+    }
+    .form-section button[type="submit"]:hover { background: var(--accent-hover); }
   </style>
 </head>
 <body>
@@ -102,7 +116,7 @@
         <div class="card-3d" style="--i: 1;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo1.jpg" alt="Зураг 1" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=1'">
+              <img src="img/photo1.svg" alt="Зураг 1" loading="lazy">
               <div class="card-front-title">Цомог #1</div>
             </div>
             <div class="card-back">
@@ -117,7 +131,7 @@
         <div class="card-3d" style="--i: 2;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo2.jpg" alt="Зураг 2" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=2'">
+              <img src="img/photo2.svg" alt="Зураг 2" loading="lazy">
               <div class="card-front-title">Цомог #2</div>
             </div>
             <div class="card-back">
@@ -132,7 +146,7 @@
         <div class="card-3d" style="--i: 3;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo3.jpg" alt="Зураг 3" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=3'">
+              <img src="img/photo3.svg" alt="Зураг 3" loading="lazy">
               <div class="card-front-title">Цомог #3</div>
             </div>
             <div class="card-back">
@@ -147,7 +161,7 @@
         <div class="card-3d" style="--i: 4;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo4.jpg" alt="Зураг 4" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=4'">
+              <img src="img/photo4.svg" alt="Зураг 4" loading="lazy">
               <div class="card-front-title">Цомог #4</div>
             </div>
             <div class="card-back">
@@ -162,7 +176,7 @@
         <div class="card-3d" style="--i: 5;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo5.jpg" alt="Зураг 5" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=5'">
+              <img src="img/photo5.svg" alt="Зураг 5" loading="lazy">
               <div class="card-front-title">Цомог #5</div>
             </div>
             <div class="card-back">
@@ -177,7 +191,7 @@
         <div class="card-3d" style="--i: 6;">
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/photo6.jpg" alt="Зураг 6" loading="lazy" onerror="this.src='https://picsum.photos/400/300?random=6'">
+              <img src="img/photo6.svg" alt="Зураг 6" loading="lazy">
               <div class="card-front-title">Цомог #6</div>
             </div>
             <div class="card-back">
@@ -198,7 +212,7 @@
       <div class="media-grid">
         <div class="media-card">
           <h4>🎥 HTML5 Видео ба Subtitle Track</h4>
-          <video controls preload="metadata" poster="img/photo1.jpg">
+          <video controls preload="metadata" poster="img/photo1.svg">
             <source src="video/clip.mp4" type="video/mp4">
             <source src="video/clip.webm" type="video/webm">
             <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
@@ -221,52 +235,42 @@
       </div>
     </section>
 
-  </main>
 
-  <footer>
-    <p>© 2026 Бямбадулам | Мэдээллийн технологи 2-р курс | Лаб 6</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Lab 9: Feedback Form Section -->
-    <section class="form-section" style="margin-top: 3rem; padding: 2rem; background: var(--card-bg, #1e2230); border-radius: 8px;">
+    <!-- Лаб 9: Санал хүсэлтийн форм -->
+    <section class="form-section" style="margin-top: 3rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px;">
       <h3 class="section-title">Порталын Санал Хүсэлтийн Форм</h3>
       <form id="feedbackForm" novalidate>
         <div class="form-group" style="margin-bottom: 1rem;">
           <label for="nameInput">Нэр:</label><br>
-          <input type="text" id="nameInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
-          <small id="nameError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+          <input type="text" id="nameInput">
+          <small id="nameError"></small>
         </div>
-
         <div class="form-group" style="margin-bottom: 1rem;">
           <label for="emailInput">Имэйл хаяг:</label><br>
-          <input type="text" id="emailInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
-          <small id="emailError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+          <input type="text" id="emailInput">
+          <small id="emailError"></small>
         </div>
-
         <div class="form-group" style="margin-bottom: 1rem;">
           <label for="passwordInput">Нууц үг:</label><br>
-          <input type="password" id="passwordInput" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;">
-          <small id="passwordError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+          <input type="password" id="passwordInput">
+          <small id="passwordError"></small>
         </div>
-
         <div class="form-group" style="margin-bottom: 1rem;">
           <label for="messageInput">Санал хүсэлт:</label><br>
-          <textarea id="messageInput" rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.3rem;"></textarea>
-          <small id="messageError" style="color: #ff4d4d; display: block; margin-top: 0.2rem;"></small>
+          <textarea id="messageInput" rows="4"></textarea>
+          <small id="messageError"></small>
         </div>
-
-        <button type="submit" style="padding: 0.7rem 1.5rem; cursor: pointer;">Илгээх</button>
+        <button type="submit">Илгээх</button>
+        <p id="formSuccess" style="color: #22c55e; margin-top: 1rem;"></p>
       </form>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 Бямбадулам | Мэдээллийн технологи 2-р курс | Лаб 9</p>
+    <p>© 2026 Бямбадулам | Мэдээллийн технологи 2-р курс | Лаб 6 &amp; 9</p>
   </footer>
 
-  <!-- JS Файлуудыг зөв дарааллаар холбох -->
   <script src="js/algorithms.js"></script>
   <script src="js/validators.js"></script>
   <script src="script.js"></script>

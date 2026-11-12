@@ -47,7 +47,7 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="https://picsum.photos/400/300?random=1" class="card-img-top" alt="Зураг 1">
+          <img src="img/photo1.svg" class="card-img-top" alt="Зураг 1">
           <div class="card-body">
             <h5 class="card-title">Цомог #1</h5>
             <p class="card-text text-muted">Bootstrap grid болон card компонент ашиглав.</p>
@@ -57,7 +57,7 @@
       </div>
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="https://picsum.photos/400/300?random=2" class="card-img-top" alt="Зураг 2">
+          <img src="img/photo2.svg" class="card-img-top" alt="Зураг 2">
           <div class="card-body">
             <h5 class="card-title">Цомог #2</h5>
             <p class="card-text text-muted">Өндөр мэдрэмжтэй responsive дизайн.</p>
@@ -67,7 +67,7 @@
       </div>
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="https://picsum.photos/400/300?random=3" class="card-img-top" alt="Зураг 3">
+          <img src="img/photo3.svg" class="card-img-top" alt="Зураг 3">
           <div class="card-body">
             <h5 class="card-title">Цомог #3</h5>
             <p class="card-text text-muted">Flexbox болон utility классууд.</p>
@@ -110,6 +110,20 @@
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlTag.setAttribute('data-bs-theme', newTheme);
       toggleBtn.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    });
+
+    // Bootstrap form validation
+    document.querySelectorAll('.needs-validation').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (form.checkValidity()) {
+          alert('Сэтгэгдэл амжилттай илгээгдлээ!');
+          form.reset();
+          form.classList.remove('was-validated');
+        } else {
+          form.classList.add('was-validated');
+        }
+      });
     });
   </script>
 </body>

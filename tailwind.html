@@ -50,7 +50,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
       <!-- Card 1 -->
       <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-        <img src="https://picsum.photos/400/300?random=1" alt="Зураг 1" class="w-full h-48 object-cover">
+        <img src="img/photo1.svg" alt="Зураг 1" class="w-full h-48 object-cover">
         <div class="p-5">
           <h5 class="font-bold text-lg mb-2">Цомог #1</h5>
           <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Tailwind CSS Grid болон card компонент ашиглав.</p>
@@ -59,7 +59,7 @@
       </div>
       <!-- Card 2 -->
       <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-        <img src="https://picsum.photos/400/300?random=2" alt="Зураг 2" class="w-full h-48 object-cover">
+        <img src="img/photo2.svg" alt="Зураг 2" class="w-full h-48 object-cover">
         <div class="p-5">
           <h5 class="font-bold text-lg mb-2">Цомог #2</h5>
           <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Өндөр мэдрэмжтэй responsive дизайн.</p>
@@ -68,7 +68,7 @@
       </div>
       <!-- Card 3 -->
       <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-        <img src="https://picsum.photos/400/300?random=3" alt="Зураг 3" class="w-full h-48 object-cover">
+        <img src="img/photo3.svg" alt="Зураг 3" class="w-full h-48 object-cover">
         <div class="p-5">
           <h5 class="font-bold text-lg mb-2">Цомог #3</h5>
           <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Flexbox болон utility классууд.</p>
@@ -82,12 +82,12 @@
       <h3 class="text-xl font-bold mb-4">Сэтгэгдэл үлдээх</h3>
       <form id="commentForm" class="space-y-4" novalidate>
         <div>
-          <label class="block text-sm font-medium mb-1">Нэр</label>
+          <label for="name" class="block text-sm font-medium mb-1">Нэр</label>
           <input type="text" id="name" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-brand" required>
           <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Нэрээ оруулна уу.</p>
         </div>
         <div>
-          <label class="block text-sm font-medium mb-1">Сэтгэгдэл</label>
+          <label for="comment" class="block text-sm font-medium mb-1">Сэтгэгдэл</label>
           <textarea id="comment" rows="3" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-brand" required></textarea>
           <p id="commentError" class="text-red-500 text-xs mt-1 hidden">Сэтгэгдэл хоосон байж болохгүй.</p>
         </div>
@@ -133,7 +133,6 @@
       const comment = document.getElementById('comment');
       const commentError = document.getElementById('commentError');
       if (!comment.value.trim()) {
-        commentError.classList.add('hidden'); // wait, should show error
         commentError.classList.remove('hidden');
         isValid = false;
       } else {
